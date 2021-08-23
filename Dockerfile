@@ -13,7 +13,8 @@ RUN python -m pip install robotframework==3.1.2 \
     robotframework-pythonlibcore==2.1.0 \
     robotframework-selenium2library==3.0.0 \
     robotframework-pabot \
-    xlrd==1.2.0 
+    xlrd==1.2.0 \
+    PyYAML
 
 WORKDIR /usr/src/robotframework/tests
 
