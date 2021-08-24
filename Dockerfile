@@ -14,7 +14,9 @@ RUN python -m pip install robotframework==3.1.2 \
     robotframework-selenium2library==3.0.0 \
     robotframework-pabot \
     xlrd==1.2.0 \
-    PyYAML
+    PyYAML \
+    robotframework-faker \
+    --upgrade robotframework-pageobjectlibrary
 
 WORKDIR /usr/src/robotframework/tests
 
