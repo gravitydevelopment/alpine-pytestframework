@@ -1,22 +1,24 @@
-# Download base image RedHat UBI8
+# Download base image ALPINE
 FROM famiromli/alpine-python3.8.10:latest
 
-# Installing Package 
+# Installing Package
 #RUN yum module install python38 -y && \
 #  ln -s /usr/bin/python3 /usr/bin/python && \
 #  yum clean all
 
-RUN apk --update add openjdk8-jre  
+RUN apk --update add openjdk8-jre \
+    alpine-sdk && apk add libffi-dev openssl-dev
 
-RUN python -m pip install robotframework==3.1.2 \     
-    robotframework-seleniumlibrary==4.1.0 \
-    robotframework-pythonlibcore==2.1.0 \
-    robotframework-selenium2library==3.0.0 \
+RUN python -m pip install --upgrade pip
+
+RUN python -m pip install robotframework \
+    robotframework-pythonlibcore \
     robotframework-pabot \
-    xlrd==1.2.0 \
-    PyYAML \
+    robotframework-pageobjectlibrary \
+    robotframework-seleniumlibrary \
+    robotframework-selenium2library \
     robotframework-faker \
-    --upgrade robotframework-pageobjectlibrary
+    xlrd \
+    PyYAML
 
 WORKDIR /usr/src/robotframework/tests
-
