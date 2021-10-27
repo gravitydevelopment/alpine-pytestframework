@@ -11,13 +11,15 @@ RUN apk --update add openjdk8-jre \
 
 RUN python -m pip install --upgrade pip
 
-RUN python -m pip install robotframework \
+RUN python -m pip install --upgrade robotframework \
     robotframework-pythonlibcore \
     robotframework-pabot \
     robotframework-pageobjectlibrary \
     robotframework-seleniumlibrary \
     robotframework-selenium2library \
     robotframework-faker \
+    robotframework-dependencylibrary \
+    robotframework-appiumlibrary \
     xlrd \
     PyYAML
 
